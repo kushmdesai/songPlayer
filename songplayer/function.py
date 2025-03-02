@@ -16,28 +16,28 @@ def mv():
     else:
         print("That is not an accepted answer try again later :(")
 
-def yn():
+def yn(user):
     yn = input("Do you want to convert to .mp3(y/n):")
     if yn == "y":
-        converter()
+        converter(user)
     elif yn == "n":
         print("Ok bye")
     else:
         print("That is not an accepted answer try again later :(")
-def converter():
+def converter(user):
     path = "../m4a"
     song_list = dir_list(path)
     print("List Sorted")
     print(song_list)
     for songs in song_list:
         print("Now downloading " + songs)
+        print("-------------------------------------------------------------------------------------")
         song_path = "../m4a/" + songs
         songs = songs.replace(".m4a","")
-        output_path = "../mp3/" + songs + ".mp3"
-        #print("Song path is: "+ song_path)
-        #print("Output song path is: " + output_path)
+        output_path = "../mp3/" +user+"Playlist"+ songs + ".mp3"
         audio = AudioSegment.from_file(song_path)
         audio.export(output_path, format = "mp3")
+        print("-------------------------------------------------------------------------------------")
         print(songs + "is finished converting")
     mv()
 
@@ -50,20 +50,20 @@ def mover():
     print("Songs moved to songsCache file")
     print("If you want to delete all songs in songsCache file then rerunthe code with the start code as delete")
 
-def donwload_songs(Url):
+def donwload_songs(Url,user):
     yt = YouTube(Url)
     ys = yt.streams.get_audio_only()
     ys.download(output_path="../m4a")
     print(yt.title + " is now downloading")
-    yn()
+    yn(user)
 
-def download_playlist(Url):
+def download_playlist(Url,user):
     pl = Playlist(Url)
     print("Your songs are now downloading")
     for video in pl.videos:
         ys = video.streams.get_audio_only()
         ys.download(output_path="../m4a")
-    yn()
+    yn(user)
 
 def delete():
     path = "../songsCache/"
