@@ -1,7 +1,7 @@
 import function as f
 d = 0
 ps = input("Do you want to download song or playlist(s/p):")
-if ps == "s": # not tested for v1
+if ps == "s": # tested for v1
     Url = input("Enter Url:")
     f.donwload_songs(Url)
 elif ps == "p":  # tested for v1
