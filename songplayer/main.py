@@ -1,7 +1,8 @@
 import function as f
 d = 0
 print("Hi with this code you can downlad and convert songs to .m3")
-user = input("but first what is your name")
+print("If you have not created a file for your songs formated as <insert name>Songs then use name temp")
+user = input("but first what is your username: ")
 ps = input("Do you want to download song or playlist(s/p):")
 if ps == "s": # tested for v1
     Url = input("Enter Url:")

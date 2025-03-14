@@ -24,21 +24,22 @@ def yn(user):
         print("Ok bye")
     else:
         print("That is not an accepted answer try again later :(")
+
 def converter(user):
     path = "../m4a"
     song_list = dir_list(path)
     print("List Sorted")
-    print(song_list)
+    print("List of Songs: " , song_list)
     for songs in song_list:
-        print("Now downloading " + songs)
         print("-------------------------------------------------------------------------------------")
+        print("Now downloading " + songs)
         song_path = "../m4a/" + songs
         songs = songs.replace(".m4a","")
-        output_path = "../mp3/" +user+"Playlist"+ songs + ".mp3"
+        output_path = "../mp3/" +user+"Playlist/"+ songs + ".mp3"
         audio = AudioSegment.from_file(song_path)
         audio.export(output_path, format = "mp3")
-        print("-------------------------------------------------------------------------------------")
         print(songs + "is finished converting")
+    print("-------------------------------------------------------------------------------------")
     mv()
 
 def mover():
@@ -66,6 +67,8 @@ def download_playlist(Url,user):
     yn(user)
 
 def delete():
+
+
     path = "../songsCache/"
     delete_list = dir_list(path)
     for songs in delete_list:
