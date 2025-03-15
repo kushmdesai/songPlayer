@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.12"
 pytubefix = "^8.12.2"
 pydub = "^0.25.1"
+eyed3 = "^0.9.7"
 
 
 [build-system]

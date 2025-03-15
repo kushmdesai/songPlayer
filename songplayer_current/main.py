@@ -5,10 +5,11 @@ print("If you have not created a file for your songs formated as <insert name>So
 user = input("but first what is your username: ")
 ps = input("Do you want to download song or playlist(s/p):")
 if ps == "s": # tested for v1
-    Url = input("Enter Url:")
+    Url = f.searcher()
     f.donwload_songs(Url,user)
+    print(Url)
 elif ps == "p":  # tested for v1
-    Url = input("Enter Url:")
+    Url = f.searcher
     f.download_playlist(Url,user)
 elif ps =="convert": # tested for v1
     f.converter(user)
