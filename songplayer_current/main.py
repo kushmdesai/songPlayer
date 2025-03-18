@@ -1,29 +1,13 @@
 import function as f
 d = 0
-print("Hi with this code you can downlad and convert songs to .m3")
-print("If you have not created a file for your songs formated as <insert name>Songs then use name temp")
-user = input("but first what is your username: ")
-ps = input("Do you want to download song or playlist(s/p):")
-if ps == "s": # tested for v1
-    Url = f.searcher()
+user = input("but first what is your username:")
+ps = input("Do you want to download a song:")
+if ps == "yes": # tested for v3
+    Url = f.searcher("")
     f.donwload_songs(Url,user)
-    print(Url)
-elif ps == "p":  # tested for v1
-    Url = f.searcher
+elif ps == "p":  # do not test for v3 soon to be deleted(not tested for v3)
+    Url = input("what is the url of the playlist you would like to download:")
     f.download_playlist(Url,user)
-elif ps =="convert": # tested for v1
-    f.converter(user)
-elif ps =="move": # tested for v1
-    f.mover()
-elif ps =="delete": # tested for v1
-    f.delete()
-else: # tested for v1
+else: #tested for v3
     print("That is not a valid option")
     print("Try again later :)")
-    d = 1
-
-if d == 0:
-    print("It is recommended that you delete all files from songsCache file to save space.")
-    e = input("Do you want to empty the songCache file(YES/no)")
-    if e == "YES":
-        f.delete()
