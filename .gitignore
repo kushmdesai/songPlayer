@@ -1,5 +1,4 @@
-m4a/*
-mp3/*
 __pycache__/
-poetry.lock
+*.lock
 *.mp3
+*.m4a
