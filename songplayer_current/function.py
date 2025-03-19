@@ -65,7 +65,7 @@ def download_playlist(Url,user):
     print("Your songs are now downloading")
     for video in pl.videos:
         ys = video.streams.get_audio_only()
-        ys.download(output_path="/home/kush/development/songplayer//m4a")
+        ys.download(output_path="/home/kush/development/songplayer/m4a")
     converter(user)
 
 def delete():
